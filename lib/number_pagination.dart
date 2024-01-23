@@ -142,7 +142,7 @@ class _NumberPaginationState extends State<NumberPagination> {
           // ),
           // SizedBox(
           //   width: 4,
-          ),
+          // ),
           InkWell(
             onTap: () => _changePage(--currentPage),
             child: Stack(
