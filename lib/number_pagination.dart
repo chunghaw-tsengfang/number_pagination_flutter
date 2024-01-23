@@ -12,10 +12,10 @@ class NumberPagination extends StatefulWidget {
     this.colorPrimary = Colors.black,
     this.colorSub = Colors.white,
     this.controlButton,
-    this.iconToFirst,
+    // this.iconToFirst,
     this.iconPrevious,
     this.iconNext,
-    this.iconToLast,
+    // this.iconToLast,
     this.fontSize = 15,
     this.fontFamily,
   });
@@ -48,10 +48,10 @@ class NumberPagination extends StatefulWidget {
   final Widget? iconPrevious;
 
   ///The icon of button to next.
-  final Widget? iconNext;
+  // final Widget? iconNext;
 
   ///The icon of button to last.
-  final Widget? iconToLast;
+  // final Widget? iconToLast;
 
   ///The size of numbers.
   final double fontSize;
@@ -69,16 +69,16 @@ class _NumberPaginationState extends State<NumberPagination> {
   late int currentPage;
   late final Widget iconToFirst;
   late final Widget iconPrevious;
-  late final Widget iconNext;
-  late final Widget iconToLast;
+  // late final Widget iconNext;
+  // late final Widget iconToLast;
 
   @override
   void initState() {
     this.currentPage = widget.pageInit;
     this.iconToFirst = widget.iconToFirst ?? Icon(Icons.first_page);
     this.iconPrevious = widget.iconPrevious ?? Icon(Icons.keyboard_arrow_left);
-    this.iconNext = widget.iconNext ?? Icon(Icons.keyboard_arrow_right);
-    this.iconToLast = widget.iconToLast ?? Icon(Icons.last_page);
+    // this.iconNext = widget.iconNext ?? Icon(Icons.keyboard_arrow_right);
+    // this.iconToLast = widget.iconToLast ?? Icon(Icons.last_page);
 
     _rangeSet();
 
@@ -128,20 +128,20 @@ class _NumberPaginationState extends State<NumberPagination> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          InkWell(
-            onTap: () => _changePage(0),
-            child: Stack(
-              children: [
-                if (widget.controlButton != null) ...[
-                  widget.controlButton!,
-                  iconToFirst
-                ] else
-                  _defaultControlButton(iconToFirst),
-              ],
-            ),
-          ),
-          SizedBox(
-            width: 4,
+          // InkWell(
+          //   onTap: () => _changePage(0),
+          //   child: Stack(
+          //     children: [
+          //       if (widget.controlButton != null) ...[
+          //         widget.controlButton!,
+          //         iconToFirst
+          //       ] else
+          //         _defaultControlButton(iconToFirst),
+          //     ],
+          //   ),
+          // ),
+          // SizedBox(
+          //   width: 4,
           ),
           InkWell(
             onTap: () => _changePage(--currentPage),
@@ -213,21 +213,21 @@ class _NumberPaginationState extends State<NumberPagination> {
               ],
             ),
           ),
-          SizedBox(
-            width: 4,
-          ),
-          InkWell(
-            onTap: () => _changePage(widget.pageTotal),
-            child: Stack(
-              children: [
-                if (widget.controlButton != null) ...[
-                  widget.controlButton!,
-                  iconToLast
-                ] else
-                  _defaultControlButton(iconToLast),
-              ],
-            ),
-          ),
+          // SizedBox(
+          //   width: 4,
+          // ),
+          // InkWell(
+          //   onTap: () => _changePage(widget.pageTotal),
+          //   child: Stack(
+          //     children: [
+          //       if (widget.controlButton != null) ...[
+          //         widget.controlButton!,
+          //         iconToLast
+          //       ] else
+          //         _defaultControlButton(iconToLast),
+          //     ],
+          //   ),
+          // ),
         ],
       ),
     );
